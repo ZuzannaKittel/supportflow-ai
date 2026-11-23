@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101311">
+    <title>SupportFlow AI — Customer Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="app-shell">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">S</div>
+                <div>
+                    <div class="brand-name">supportflow<span>.</span></div>
+                    <div class="brand-caption">AI SUPPORT PLATFORM</div>
+                </div>
+            </div>
+
+            <div class="workspace-label">WORKSPACE</div>
+
+            <div class="nav-item active">
+                <span class="nav-icon">◫</span>
+                <span>Conversations</span>
+                <span class="nav-count">01</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-icon">⌘</span>
+                <span>AI agent</span>
+            </div>
+            <div class="nav-item">
+                <span class="nav-icon">▤</span>
+                <span>Knowledge base</span>
+            </div>
+
+            <div class="sidebar-bottom">
+                <div class="system-status">
+                    <span class="status-dot"></span>
+                    <span>System operational</span>
+                </div>
+                <div class="profile">
+                    <div class="avatar">SF</div>
+                    <div>
+                        <div class="profile-name">SupportFlow Demo</div>
+                        <div class="profile-role">Administrator</div>
+                    </div>
+                    <span class="profile-menu">···</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-area">
+            <header class="topbar">
+                <div>
+                    <div class="breadcrumb">Workspace <span>/</span> Conversations <span>/</span> <strong>New conversation</strong></div>
+                    <h1>Customer support</h1>
+                </div>
+                <div class="topbar-actions">
+                    <div class="environment-tag">
+                        <span class="status-dot"></span>
+                        DEMO ENVIRONMENT
+                    </div>
+                    <button id="new-chat-button" class="new-chat-button" type="button">
+                        <span>＋</span> New conversation
+                    </button>
+                </div>
+            </header>
+
+            <div class="dashboard">
+                <section class="conversation-panel">
+                    <div class="conversation-header">
+                        <div class="customer-heading">
+                            <div class="customer-avatar">AM</div>
+                            <div>
+                                <div class="customer-name">Alex Morgan</div>
+                                <div class="customer-subtitle">Customer · Order #1042</div>
+                            </div>
+                        </div>
+                        <div class="conversation-meta">
+                            <span class="open-pill"><span></span> Open</span>
+                            <span class="meta-divider"></span>
+                            <span class="conversation-id" id="conversation-label">NEW SESSION</span>
+                        </div>
+                    </div>
+
+                    <div class="conversation-body" id="messages">
+                        <div class="date-divider"><span>TODAY</span></div>
+
+                        <div class="message-row agent-row">
+                            <div class="message-avatar agent-avatar">S</div>
+                            <div class="message-content">
+                                <div class="message-author">SupportFlow AI <span>Just now</span></div>
+                                <div class="message-bubble agent-bubble">
+                                    Hi Alex! I'm your AI support assistant. I can help you track orders, check refund eligibility, and resolve delivery issues. What can I help you with today?
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="suggestions" id="suggestions">
+                            <div class="suggestions-label">TRY ASKING</div>
+                            <button class="suggestion" data-message="Can you check the delivery status of order 1044?">Track my order <span>↗</span></button>
+                            <button class="suggestion" data-message="Am I eligible for a refund on order 1042?">Check refund eligibility <span>↗</span></button>
+                            <button class="suggestion" data-message="I need help with a delivery issue.">Get support <span>↗</span></button>
+                        </div>
+                    </div>
+
+                    <form class="composer" id="chat-form">
+                        <div class="composer-box">
+                            <textarea
+                                id="message-input"
+                                rows="1"
+                                maxlength="4000"
+                                placeholder="Message SupportFlow AI..."
+                                aria-label="Message SupportFlow AI"
+                            ></textarea>
+                            <div class="composer-bottom">
+                                <div class="composer-hint">
+                                    <span class="keyboard-key">↵</span> to send
+                                    <span class="hint-divider">·</span>
+                                    <span>AI responses may need verification</span>
+                                </div>
+                                <button id="send-button" class="send-button" type="submit" aria-label="Send message">
+                                    <span>↑</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="composer-disclaimer">SupportFlow AI can make mistakes. Review important account and payment decisions.</div>
+                    </form>
+                </section>
+
+                <aside class="details-panel">
+                    <section class="detail-section">
+                        <div class="section-heading">
+                            <span>CONVERSATION DETAILS</span>
+                            <span class="section-menu">···</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Status</span>
+                            <span class="detail-value"><span class="status-dot"></span> Active</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Assigned to</span>
+                            <span class="detail-value">SupportFlow AI</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Channel</span>
+                            <span class="detail-value">Web chat</span>
+                        </div>
+                    </section>
+
+                    <section class="detail-section order-section">
+                        <div class="section-heading">
+                            <span>CUSTOMER CONTEXT</span>
+                            <span class="context-tag">SAMPLE DATA</span>
+                        </div>
+                        <div class="context-customer">
+                            <div class="customer-avatar small-avatar">AM</div>
+                            <div>
+                                <div class="context-name">Alex Morgan</div>
+                                <div class="context-email">alex.morgan@example.com</div>
+                            </div>
+                        </div>
+                        <div class="order-card">
+                            <div class="order-card-top">
+                                <span>ORDER #1042</span>
+                                <span class="order-status">DELIVERED</span>
+                            </div>
+                            <div class="order-product">
+                                <div class="product-icon">⌁</div>
+                                <div>
+                                    <div class="product-name">Wireless Headphones</div>
+                                    <div class="product-description">Order item · Sample product</div>
+                                </div>
+                            </div>
+                            <div class="order-card-footer">
+                                <span>Tracking</span>
+                                <span>SF1042001</span>
+                            </div>
+                        </div>
+                        <div class="context-note">The agent retrieves order information through backend tools. This panel displays sample customer context.</div>
+                    </section>
+
+                    <section class="detail-section activity-section">
+                        <div class="section-heading">
+                            <span>AGENT ACTIVITY</span>
+                            <span class="live-indicator"><span></span> LIVE</span>
+                        </div>
+                        <div id="agent-activity" class="activity-list">
+                            <div class="activity-empty">
+                                <div class="activity-empty-icon">⌘</div>
+                                <div>No tools executed yet</div>
+                                <span>Agent actions will appear here</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="agent-mode-card">
+                        <div class="mode-card-top">
+                            <span class="mode-icon">✳</span>
+                            <span class="mode-label">AGENT RUNTIME</span>
+                        </div>
+                        <div class="mode-name" id="agent-mode">Checking connection...</div>
+                        <div class="mode-description">Tool-assisted customer support</div>
+                    </section>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
